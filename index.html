@@ -4,52 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Akshaya Balan — Senior Data Engineer</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Instrument+Sans:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
 :root {
-  --cream: #f5f0e8;
-  --cream2: #ede7d9;
-  --ink: #1a1612;
-  --ink2: #2d2720;
-  --amber: #c4621a;
-  --amber-light: #e8874a;
-  --sage: #4a6741;
-  --warm-gray: #8a7f72;
-  --warm-gray2: #b5aa9a;
-  --rule: rgba(26,22,18,0.12);
-  --card-bg: #ece5d3;
+  --cream:       #fdf8f2;
+  --cream2:      #f5ede0;
+  --cream3:      #ede1cf;
+  --terra:       #b5651d;
+  --terra-light: #d4875a;
+  --terra-pale:  #f0e0d0;
+  --terra-deep:  #8b4513;
+  --ink:         #1a0f08;
+  --ink2:        #2c1a0e;
+  --brown:       #6b4226;
+  --muted:       #8a6e58;
+  --muted2:      #b09882;
+  --rule:        #e4d5c0;
+  --rule2:       rgba(180,140,100,0.18);
+  --card:        #faf3e8;
 }
 
 body {
   background: var(--cream);
   color: var(--ink);
-  font-family: 'Instrument Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
-  cursor: none;
-}
-
-.cursor {
-  width: 8px; height: 8px;
-  background: var(--amber);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.15s ease;
-  mix-blend-mode: multiply;
-}
-.cursor-ring {
-  width: 32px; height: 32px;
-  border: 1px solid var(--amber);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9998;
-  opacity: 0.5;
-  mix-blend-mode: multiply;
+  line-height: 1.65;
 }
 
 /* NAV */
@@ -60,122 +43,105 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.4rem 5rem;
-  background: rgba(245,240,232,0.92);
-  backdrop-filter: blur(12px);
+  padding: 0 5rem;
+  height: 62px;
+  background: rgba(253,248,242,0.95);
+  backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--rule);
 }
-
 .nav-logo {
-  font-family: 'Playfair Display', serif;
-  font-weight: 900;
-  font-size: 1.15rem;
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  font-size: 1.05rem;
   color: var(--ink);
+  letter-spacing: -0.01em;
 }
-.nav-logo em { font-style: italic; color: var(--amber); }
-
-.nav-links { display: flex; gap: 3rem; list-style: none; }
-
+.nav-logo em { font-style: italic; color: var(--terra); }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
 .nav-links a {
   font-size: 0.7rem;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--warm-gray);
+  color: var(--muted);
   text-decoration: none;
   transition: color 0.2s;
-  position: relative;
-}
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -3px; left: 0;
-  width: 0; height: 1px;
-  background: var(--amber);
-  transition: width 0.25s ease;
 }
 .nav-links a:hover { color: var(--ink); }
-.nav-links a:hover::after { width: 100%; }
-
 .nav-badge {
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 0.4rem 1rem;
-  background: var(--ink);
-  color: var(--cream);
-  border-radius: 50px;
+  padding: 0.35rem 0.9rem;
+  background: var(--terra);
+  color: #fff;
+  border-radius: 3px;
 }
 
 /* HERO */
 .hero {
   min-height: 100vh;
-  padding: 10rem 5rem 6rem;
+  padding: 8rem 5rem 5rem;
+  background: var(--cream);
+  border-bottom: 1px solid var(--rule);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: end;
-  border-bottom: 1px solid var(--rule);
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-bg-text {
-  position: absolute;
-  bottom: -2rem; right: -1rem;
-  font-family: 'Playfair Display', serif;
-  font-size: 22vw;
-  font-weight: 900;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(26,22,18,0.045);
-  pointer-events: none;
-  line-height: 1;
-  user-select: none;
+  gap: 5rem;
+  align-items: center;
 }
 
 .hero-eyebrow {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 2.5rem;
+  gap: 0.85rem;
+  margin-bottom: 1.75rem;
 }
-.hero-eyebrow-line { width: 40px; height: 1px; background: var(--amber); }
+.hero-eyebrow-line { width: 32px; height: 1.5px; background: var(--terra); flex-shrink: 0; }
 .hero-eyebrow span {
   font-size: 0.68rem;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--amber);
+  color: var(--terra);
 }
 
 .hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(3.8rem, 6.5vw, 6.5rem);
-  font-weight: 900;
-  line-height: 0.92;
+  font-family: 'Lora', serif;
+  font-size: clamp(3rem, 5.5vw, 5rem);
+  font-weight: 600;
+  line-height: 1.02;
   letter-spacing: -0.02em;
-  margin-bottom: 2.5rem;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
 }
-.hero h1 em { font-style: italic; color: var(--amber); }
+.hero h1 em { font-style: italic; color: var(--terra); }
 
-.hero-meta { display: flex; flex-direction: column; gap: 0.4rem; }
+.hero-meta { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 2.5rem; }
 .hero-meta-item {
-  font-size: 0.8rem;
-  color: var(--warm-gray);
+  font-size: 0.82rem;
+  color: var(--muted);
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.65rem;
 }
-.hero-meta-item::before { content: '◆'; font-size: 0.4rem; color: var(--amber); }
+.hero-meta-item::before {
+  content: '';
+  width: 5px; height: 5px;
+  background: var(--terra-light);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
 
 .hero-desc {
-  font-family: 'Instrument Serif', serif;
-  font-size: 1.45rem;
-  line-height: 1.6;
-  color: var(--ink2);
-  margin-bottom: 3.5rem;
+  font-family: 'Lora', serif;
   font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--brown);
+  margin-bottom: 3rem;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--terra-pale);
 }
 
 .hero-stats-grid {
@@ -184,234 +150,267 @@ nav {
   gap: 1px;
   background: var(--rule);
   border: 1px solid var(--rule);
+  border-radius: 8px;
+  overflow: hidden;
 }
-
 .hero-stat {
   background: var(--cream);
   padding: 1.5rem;
   transition: background 0.2s;
 }
-.hero-stat:hover { background: var(--card-bg); }
-
+.hero-stat:hover { background: var(--terra-pale); }
 .stat-number {
-  font-family: 'Playfair Display', serif;
-  font-weight: 900;
-  font-size: 2.4rem;
-  line-height: 1;
+  font-family: 'Lora', serif;
+  font-size: 2rem;
+  font-weight: 600;
   color: var(--ink);
+  line-height: 1;
   margin-bottom: 0.35rem;
+  letter-spacing: -0.02em;
 }
-.stat-number span { color: var(--amber); }
-
-.stat-desc { font-size: 0.7rem; color: var(--warm-gray); letter-spacing: 0.04em; line-height: 1.4; }
+.stat-number span { color: var(--terra); }
+.stat-desc { font-size: 0.7rem; color: var(--muted2); line-height: 1.4; }
 
 /* SECTIONS */
-section { padding: 6rem 5rem; border-bottom: 1px solid var(--rule); }
+section {
+  padding: 6rem 5rem;
+  background: var(--cream);
+  border-bottom: 1px solid var(--rule);
+}
+section.alt { background: var(--cream2); }
 
 .section-header {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
   align-items: baseline;
-  gap: 2rem;
-  margin-bottom: 5rem;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
 }
-
 .section-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--amber);
-}
-
-.section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.2rem, 4vw, 3.5rem);
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  line-height: 1.05;
-}
-
-.section-tag {
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--warm-gray);
+  color: var(--terra);
+  flex-shrink: 0;
+}
+.section-title {
+  font-family: 'Lora', serif;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.1;
+}
+.section-tag {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted2);
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 /* PROJECTS */
 .project-row {
   display: grid;
-  grid-template-columns: 120px 1fr 2fr 1.2fr;
-  gap: 0;
+  grid-template-columns: 64px 190px 1fr 200px;
   border-top: 1px solid var(--rule);
-  padding: 3rem 0;
+  padding: 2.5rem 0;
   align-items: start;
-  transition: background 0.25s, padding 0.25s, margin 0.25s;
-  cursor: default;
+  transition: background 0.22s, padding 0.22s, margin 0.22s;
 }
 .project-row:last-child { border-bottom: 1px solid var(--rule); }
-.project-row:hover { background: var(--card-bg); margin: 0 -5rem; padding: 3rem 5rem; }
+.project-row:hover {
+  background: var(--terra-pale);
+  margin: 0 -5rem;
+  padding: 2.5rem 5rem;
+}
 
 .proj-index {
-  font-family: 'Playfair Display', serif;
-  font-size: 3.5rem;
-  font-weight: 900;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--warm-gray2);
-  line-height: 1;
-  transition: color 0.25s, -webkit-text-stroke 0.25s;
-}
-.project-row:hover .proj-index { color: var(--amber); -webkit-text-stroke: 1px var(--amber); }
-
-.proj-cat {
-  font-size: 0.62rem;
+  font-family: 'Lora', serif;
+  font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  color: var(--muted2);
+  padding-top: 0.2rem;
+}
+.proj-header { padding-right: 2rem; }
+.proj-cat {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
-  color: var(--amber);
-  margin-bottom: 0.75rem;
+  color: var(--terra);
+  margin-bottom: 0.5rem;
 }
-
 .proj-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  font-weight: 700;
-  line-height: 1.15;
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  font-weight: 600;
   color: var(--ink);
+  line-height: 1.3;
 }
-
-.proj-body { padding-top: 0.5rem; }
-
+.proj-body { padding-right: 2rem; }
 .proj-desc {
   font-size: 0.82rem;
-  line-height: 1.8;
-  color: var(--warm-gray);
-  margin-bottom: 1.5rem;
+  line-height: 1.82;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
 }
-
-.proj-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-
+.proj-stack { display: flex; flex-wrap: wrap; gap: 0.35rem; }
 .pill {
-  font-size: 0.6rem;
+  font-size: 0.58rem;
   font-weight: 500;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
-  padding: 0.3rem 0.7rem;
+  padding: 0.25rem 0.65rem;
+  background: var(--cream2);
   border: 1px solid var(--rule);
-  color: var(--warm-gray);
-  border-radius: 2px;
+  color: var(--muted);
+  border-radius: 3px;
   transition: all 0.2s;
 }
-.project-row:hover .pill { border-color: rgba(196,98,26,0.3); color: var(--amber); }
+.project-row:hover .pill { background: #fff; border-color: var(--terra-light); color: var(--terra-deep); }
 
 .proj-metrics {
-  padding-top: 0.5rem;
+  border-left: 2px solid var(--rule);
+  padding-left: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  border-left: 1px solid var(--rule);
-  padding-left: 2.5rem;
+  transition: border-color 0.22s;
 }
-
+.project-row:hover .proj-metrics { border-left-color: var(--terra); }
 .metric-big {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  font-weight: 900;
+  font-family: 'Lora', serif;
+  font-size: 1.7rem;
+  font-weight: 600;
   color: var(--ink);
   line-height: 1;
   margin-bottom: 0.2rem;
+  letter-spacing: -0.02em;
 }
-.metric-big.amber { color: var(--amber); }
-.metric-big.sage { color: var(--sage); }
-.metric-caption { font-size: 0.68rem; color: var(--warm-gray); line-height: 1.4; }
+.metric-big.terra { color: var(--terra); }
+.metric-caption { font-size: 0.66rem; color: var(--muted2); line-height: 1.4; }
 
 /* SKILLS */
-#skills { background: var(--ink); color: var(--cream); }
+#skills { background: var(--ink2); }
 #skills .section-title { color: var(--cream); }
-#skills .section-num { color: var(--amber-light); }
+#skills .section-num { color: var(--terra-light); }
+#skills .section-tag { color: rgba(253,248,242,0.3); }
+#skills .section-header { border-bottom-color: rgba(253,248,242,0.1); }
 
-.skills-columns { display: grid; grid-template-columns: repeat(5, 1fr); gap: 3rem; }
-
+.skills-columns { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2.5rem; }
 .skill-col-title {
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--amber-light);
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid rgba(245,240,232,0.1);
+  color: var(--terra-light);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(253,248,242,0.08);
 }
-
 .skill-entry {
   font-size: 0.8rem;
-  color: rgba(245,240,232,0.5);
-  padding: 0.55rem 0;
-  border-bottom: 1px solid rgba(245,240,232,0.05);
+  color: rgba(253,248,242,0.42);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(253,248,242,0.05);
   transition: color 0.2s;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
 }
 .skill-entry:last-child { border-bottom: none; }
-.skill-entry:hover { color: var(--cream); }
-.skill-entry::before { content: '—'; font-size: 0.6rem; color: var(--amber-light); opacity: 0.6; flex-shrink: 0; }
+.skill-entry:hover { color: rgba(253,248,242,0.9); }
+.skill-entry::before {
+  content: '';
+  width: 4px; height: 4px;
+  background: var(--terra-light);
+  border-radius: 50%;
+  flex-shrink: 0;
+  opacity: 0.55;
+}
 
 /* EXPERIENCE */
-#experience { background: var(--cream2); }
+.exp-company-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--ink2);
+  border-radius: 8px;
+  margin-bottom: 0;
+}
+.exp-company-logo {
+  width: 40px; height: 40px;
+  background: var(--terra);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+.exp-company-name-big { font-family: 'Lora', serif; font-size: 1rem; font-weight: 600; color: var(--cream); }
+.exp-company-sub { font-size: 0.72rem; color: rgba(253,248,242,0.4); margin-top: 0.15rem; }
+.exp-company-tenure { margin-left: auto; font-size: 0.68rem; font-weight: 500; color: var(--terra-light); letter-spacing: 0.04em; }
 
 .exp-entry {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 4rem;
-  padding: 4rem 0;
+  grid-template-columns: 240px 1fr;
+  gap: 3.5rem;
+  padding: 2.5rem 0;
   border-top: 1px solid var(--rule);
 }
 .exp-entry:last-child { border-bottom: 1px solid var(--rule); }
-
-.exp-tenure { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; color: var(--warm-gray); text-transform: uppercase; margin-bottom: 1rem; }
-
+.exp-tenure { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; color: var(--muted2); text-transform: uppercase; margin-bottom: 0.6rem; }
 .exp-role-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
-  font-weight: 900;
-  line-height: 1.1;
+  font-family: 'Lora', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
   color: var(--ink);
-  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  margin-bottom: 0.65rem;
 }
-
-.exp-company-name { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; color: var(--amber); text-transform: uppercase; margin-bottom: 1.5rem; }
-
-.exp-badge-row { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-
+.exp-badge-row { display: flex; flex-wrap: wrap; gap: 0.35rem; }
 .exp-badge {
-  font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
-  padding: 0.3rem 0.7rem; background: var(--ink); color: var(--cream); border-radius: 2px;
+  font-size: 0.58rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.25rem 0.6rem; background: var(--terra); color: #fff; border-radius: 3px;
 }
-.exp-badge.outline { background: transparent; border: 1px solid var(--rule); color: var(--warm-gray); }
+.exp-badge.outline { background: transparent; border: 1px solid var(--rule); color: var(--muted); }
 
 .exp-summary {
-  font-family: 'Instrument Serif', serif;
-  font-size: 1.1rem;
+  font-family: 'Lora', serif;
   font-style: italic;
-  color: var(--ink2);
-  line-height: 1.65;
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
+  font-size: 0.9rem;
+  color: var(--brown);
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
   border-bottom: 1px solid var(--rule);
 }
-
-.exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.85rem; }
-
+.exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
 .exp-bullets li {
   font-size: 0.8rem;
-  color: var(--warm-gray);
-  line-height: 1.75;
-  padding-left: 1.5rem;
+  color: var(--muted);
+  line-height: 1.78;
+  padding-left: 1.25rem;
   position: relative;
 }
-.exp-bullets li::before { content: '◆'; position: absolute; left: 0; font-size: 0.35rem; color: var(--amber); top: 0.5rem; }
+.exp-bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0.62rem;
+  width: 5px; height: 5px;
+  border: 1.5px solid var(--terra);
+  border-radius: 50%;
+}
 .exp-bullets li strong { color: var(--ink); font-weight: 600; }
 
 /* RECOGNITION */
@@ -421,23 +420,30 @@ section { padding: 6rem 5rem; border-bottom: 1px solid var(--rule); }
   gap: 1px;
   background: var(--rule);
   border: 1px solid var(--rule);
+  border-radius: 8px;
+  overflow: hidden;
 }
-
-.recog-card { background: var(--cream); padding: 2.5rem; transition: background 0.2s; }
-.recog-card:hover { background: var(--card-bg); }
-
-.recog-icon { font-size: 1.5rem; margin-bottom: 1.25rem; }
-
+.recog-card { background: var(--cream); padding: 2rem; transition: background 0.2s; }
+.recog-card:hover { background: var(--terra-pale); }
+.recog-icon-wrap {
+  width: 36px; height: 36px;
+  background: var(--terra-pale);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.recog-icon-wrap svg { width: 16px; height: 16px; stroke: var(--terra); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .recog-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-family: 'Lora', serif;
+  font-size: 0.9rem;
+  font-weight: 600;
   color: var(--ink);
-  margin-bottom: 0.75rem;
-  line-height: 1.2;
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
 }
-
-.recog-desc { font-size: 0.78rem; color: var(--warm-gray); line-height: 1.7; }
+.recog-desc { font-size: 0.76rem; color: var(--muted); line-height: 1.72; }
 
 /* FOOTER */
 footer {
@@ -449,50 +455,44 @@ footer {
   gap: 3rem;
   align-items: center;
 }
-
 .footer-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.8rem;
-  font-weight: 900;
+  font-family: 'Lora', serif;
+  font-size: 2.2rem;
+  font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
-.footer-name em { font-style: italic; color: var(--amber-light); }
-
-.footer-tagline { font-size: 0.78rem; color: rgba(245,240,232,0.4); letter-spacing: 0.06em; }
+.footer-name em { font-style: italic; color: var(--terra-light); }
+.footer-tagline { font-size: 0.78rem; color: rgba(253,248,242,0.38); }
 .footer-right { text-align: right; }
-.footer-location { font-size: 0.72rem; color: rgba(245,240,232,0.4); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
-.footer-copy { font-size: 0.68rem; color: rgba(245,240,232,0.22); }
+.footer-location { font-size: 0.7rem; color: rgba(253,248,242,0.38); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem; }
+.footer-copy { font-size: 0.65rem; color: rgba(253,248,242,0.2); }
 
 /* ANIMATIONS */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s ease, transform 0.75s ease; }
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 @media (max-width: 1024px) {
-  nav { padding: 1rem 1.5rem; }
+  nav { padding: 0 1.5rem; }
   .nav-badge { display: none; }
-  .hero { grid-template-columns: 1fr; padding: 8rem 1.5rem 4rem; gap: 3rem; }
-  .hero-bg-text { display: none; }
+  .hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 4rem; gap: 2.5rem; }
   section { padding: 4rem 1.5rem; }
-  .project-row { grid-template-columns: 60px 1fr; }
-  .proj-body { grid-column: 2; }
+  .project-row { grid-template-columns: 48px 1fr; }
+  .proj-header { grid-column: 2; }
+  .proj-body { grid-column: 2; padding-right: 0; }
   .proj-metrics { display: none; }
-  .project-row:hover { margin: 0; padding: 3rem 0; }
-  .skills-columns { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
-  .exp-entry { grid-template-columns: 1fr; gap: 1.5rem; }
+  .project-row:hover { margin: 0; padding: 2.5rem 0; }
+  .skills-columns { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .exp-entry { grid-template-columns: 1fr; gap: 1.25rem; }
   .recognition-grid { grid-template-columns: 1fr; }
   footer { grid-template-columns: 1fr; }
   .footer-right { text-align: left; }
-  .section-header { grid-template-columns: auto 1fr; }
   .section-tag { display: none; }
 }
 </style>
 </head>
 <body>
-
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
 
 <nav>
   <div class="nav-logo">Akshaya <em>Balan</em></div>
@@ -505,9 +505,8 @@ footer {
   <div class="nav-badge">Open to Opportunities</div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
-  <div class="hero-bg-text">AB</div>
-
   <div class="reveal">
     <div class="hero-eyebrow">
       <div class="hero-eyebrow-line"></div>
@@ -520,9 +519,8 @@ footer {
       <div class="hero-meta-item">Pipelines that drive business outcomes</div>
     </div>
   </div>
-
   <div class="reveal">
-    <p class="hero-desc">"Building data infrastructure that moves at the speed of business — from AI tools trusted by executive leadership to pipelines that protect drug pricing accuracy for millions of members."</p>
+    <p class="hero-desc">Building data infrastructure that moves at the speed of business — from AI tools trusted by executive leadership to pipelines that protect drug pricing accuracy for millions of members.</p>
     <div class="hero-stats-grid">
       <div class="hero-stat">
         <div class="stat-number"><span>$160</span>M</div>
@@ -554,61 +552,46 @@ footer {
 
   <div class="project-row reveal">
     <div class="proj-index">01</div>
-    <div>
+    <div class="proj-header">
       <div class="proj-cat">AI / LLM</div>
-      <div class="proj-title">Gemini Analytics<br>Assistant</div>
+      <div class="proj-title">Gemini Analytics Assistant</div>
     </div>
     <div class="proj-body">
-      <p class="proj-desc">Sole engineer on an AI assistant that lets 50+ stakeholders — including executive leadership across 4 teams — query live business metrics in plain English. Replaced a chain of emails, meetings, and manual analysis that consumed ~20% of an engineer's workday per inquiry.</p>
+      <p class="proj-desc">Co-built an AI assistant — in partnership with a principal engineer — that lets 50+ stakeholders, including executive leadership across 4 teams, query live business metrics in plain English. Led knowledge base coordination across 5 engineers, gathered and compiled their domain expertise into a unified assistant, and educated the broader team on how to build AI agents. Replaced a chain of emails, meetings, and manual analysis that consumed ~20% of an engineer's workday per inquiry.</p>
       <div class="proj-stack">
-        <span class="pill">Google Gemini</span><span class="pill">LLM Integration</span><span class="pill">Prompt Engineering</span><span class="pill">ChromaDB</span><span class="pill">Python</span><span class="pill">BigQuery</span>
+        <span class="pill">Google Gemini</span><span class="pill">LLM Integration</span><span class="pill">Prompt Engineering</span><span class="pill">Python</span><span class="pill">BigQuery</span>
       </div>
     </div>
     <div class="proj-metrics">
-      <div>
-        <div class="metric-big amber">~20%</div>
-        <div class="metric-caption">engineer workday eliminated per inquiry</div>
-      </div>
-      <div>
-        <div class="metric-big">50+</div>
-        <div class="metric-caption">daily users incl. exec leadership</div>
-      </div>
-      <div>
-        <div class="metric-big">4</div>
-        <div class="metric-caption">teams served across org</div>
-      </div>
+      <div><div class="metric-big terra">~20%</div><div class="metric-caption">engineer workday eliminated per inquiry</div></div>
+      <div><div class="metric-big">50+</div><div class="metric-caption">daily users incl. exec leadership</div></div>
+      <div><div class="metric-big">4</div><div class="metric-caption">teams served across org</div></div>
     </div>
   </div>
 
   <div class="project-row reveal">
     <div class="proj-index">02</div>
-    <div>
+    <div class="proj-header">
       <div class="proj-cat">Pipeline Delivery</div>
-      <div class="proj-title">Welcome Season<br>Client Setup Pipeline</div>
+      <div class="proj-title">Annual Enrollment Client Setup Pipeline</div>
     </div>
     <div class="proj-body">
-      <p class="proj-desc">Delivered the 2026 Welcome Season Client Setup Pipeline, compressing a 4-week scope into 2 weeks. Automated client setup from 6–7 minutes per client down to a Day-1 data availability process — directly supporting accurate drug pricing and minimizing financial leakage.</p>
+      <p class="proj-desc">Built the data pipeline that configures employer clients — both new clients onboarding for the first time and existing clients renewing for the upcoming plan year — ahead of the annual period when employees begin using their health and prescription benefits. If client data isn't loaded accurately and on time, employees are charged wrong drug prices at the pharmacy, financial reporting is delayed, and revenue recognition is impacted. Delivered the full pipeline in 2 weeks against a 4-week estimate, automating a process that previously took 6–7 minutes of manual setup per client.</p>
       <div class="proj-stack">
         <span class="pill">Python</span><span class="pill">BigQuery</span><span class="pill">Airflow</span><span class="pill">dbt</span><span class="pill">GCP</span><span class="pill">SQLAlchemy</span>
       </div>
     </div>
     <div class="proj-metrics">
-      <div>
-        <div class="metric-big amber">2×</div>
-        <div class="metric-caption">faster delivery — 4-week scope in 2 weeks</div>
-      </div>
-      <div>
-        <div class="metric-big">Day 1</div>
-        <div class="metric-caption">automated data availability for pricing</div>
-      </div>
+      <div><div class="metric-big terra">2×</div><div class="metric-caption">faster — 4-week scope in 2 weeks</div></div>
+      <div><div class="metric-big">Day 1</div><div class="metric-caption">automated data availability</div></div>
     </div>
   </div>
 
   <div class="project-row reveal">
     <div class="proj-index">03</div>
-    <div>
+    <div class="proj-header">
       <div class="proj-cat">Data Engineering</div>
-      <div class="proj-title">Enterprise GCP<br>Ingestion Pipeline</div>
+      <div class="proj-title">Enterprise GCP Ingestion Pipeline</div>
     </div>
     <div class="proj-body">
       <p class="proj-desc">End-to-end data engineering pipeline on GCP processing high-volume datasets — reducing manual effort for 12 resources over 4 months, streamlining setup for 2,000+ clients, saving 75% of processing time, and driving a projected $160M yearly profit increase.</p>
@@ -617,46 +600,34 @@ footer {
       </div>
     </div>
     <div class="proj-metrics">
-      <div>
-        <div class="metric-big amber">$160M</div>
-        <div class="metric-caption">projected yearly profit increase</div>
-      </div>
-      <div>
-        <div class="metric-big">75%</div>
-        <div class="metric-caption">time saved across 2,000+ clients</div>
-      </div>
+      <div><div class="metric-big terra">$160M</div><div class="metric-caption">projected yearly profit increase</div></div>
+      <div><div class="metric-big">75%</div><div class="metric-caption">time saved across 2,000+ clients</div></div>
     </div>
   </div>
 
   <div class="project-row reveal">
     <div class="proj-index">04</div>
-    <div>
+    <div class="proj-header">
       <div class="proj-cat">Infrastructure</div>
-      <div class="proj-title">Containerized ETL<br>& Data Governance</div>
+      <div class="proj-title">Containerized ETL &amp; Data Governance</div>
     </div>
     <div class="proj-body">
-      <p class="proj-desc">Engineered scalable containerized ETL workflows cutting manual operational intervention by 60%. Established GMS coding standards and automated unit tests that eliminated ~70% of ad-hoc Excel validation — bringing defect rates down to ~2% of user stories.</p>
+      <p class="proj-desc">Engineered scalable containerized ETL workflows cutting manual operational intervention by 60%. Established the team's coding standards and automated unit tests that eliminated ~70% of ad-hoc Excel validation — bringing defect rates down to ~2% of user stories.</p>
       <div class="proj-stack">
         <span class="pill">BigQuery</span><span class="pill">Docker</span><span class="pill">Airflow</span><span class="pill">dbt</span><span class="pill">Python</span>
       </div>
     </div>
     <div class="proj-metrics">
-      <div>
-        <div class="metric-big sage">60%</div>
-        <div class="metric-caption">reduction in manual interventions</div>
-      </div>
-      <div>
-        <div class="metric-big sage">~2%</div>
-        <div class="metric-caption">defect rate on user stories</div>
-      </div>
+      <div><div class="metric-big">60%</div><div class="metric-caption">reduction in manual interventions</div></div>
+      <div><div class="metric-big">~2%</div><div class="metric-caption">defect rate on user stories</div></div>
     </div>
   </div>
 
   <div class="project-row reveal">
     <div class="proj-index">05</div>
-    <div>
+    <div class="proj-header">
       <div class="proj-cat">Monitoring / Finance</div>
-      <div class="proj-title">Financial Data<br>Surveillance System</div>
+      <div class="proj-title">Financial Data Surveillance System</div>
     </div>
     <div class="proj-body">
       <p class="proj-desc">Designed a real-time surveillance strategy for a system interface product — BigQuery scripting, Tableau monitoring dashboards, automated corrections to prevent financial data leakage, and a Salesforce case workflow replacing ad-hoc email/Teams notifications.</p>
@@ -665,22 +636,16 @@ footer {
       </div>
     </div>
     <div class="proj-metrics">
-      <div>
-        <div class="metric-big amber">80%</div>
-        <div class="metric-caption">manual setup effort eliminated</div>
-      </div>
-      <div>
-        <div class="metric-big">Real-time</div>
-        <div class="metric-caption">financial change detection</div>
-      </div>
+      <div><div class="metric-big terra">80%</div><div class="metric-caption">manual setup effort eliminated</div></div>
+      <div><div class="metric-big">Real-time</div><div class="metric-caption">financial change detection</div></div>
     </div>
   </div>
 
   <div class="project-row reveal">
     <div class="proj-index">06</div>
-    <div>
+    <div class="proj-header">
       <div class="proj-cat">Automation</div>
-      <div class="proj-title">Client Onboarding<br>& Pricing Module</div>
+      <div class="proj-title">Client Onboarding &amp; Pricing Module</div>
     </div>
     <div class="proj-body">
       <p class="proj-desc">Automated client onboarding and pricing configuration module reducing business analyst processing time by ~50%, ensuring accurate, timely configuration of pricing workflows supporting a $100M EBITDA target.</p>
@@ -689,22 +654,16 @@ footer {
       </div>
     </div>
     <div class="proj-metrics">
-      <div>
-        <div class="metric-big sage">50%</div>
-        <div class="metric-caption">BA processing time reduced</div>
-      </div>
-      <div>
-        <div class="metric-big sage">$100M</div>
-        <div class="metric-caption">EBITDA target supported</div>
-      </div>
+      <div><div class="metric-big">50%</div><div class="metric-caption">BA processing time reduced</div></div>
+      <div><div class="metric-big">$100M</div><div class="metric-caption">EBITDA target supported</div></div>
     </div>
   </div>
 
   <div class="project-row reveal">
     <div class="proj-index">07</div>
-    <div>
+    <div class="proj-header">
       <div class="proj-cat">Automation</div>
-      <div class="proj-title">Financial Year<br>Setup Automation</div>
+      <div class="proj-title">Financial Year Setup Automation</div>
     </div>
     <div class="proj-body">
       <p class="proj-desc">Automated system using data modeling to accurately identify clients for financial year setup — eliminating a 20% client omission rate in the prior process, bolstering customer trust and recovering ~$1M in additional revenue.</p>
@@ -713,25 +672,18 @@ footer {
       </div>
     </div>
     <div class="proj-metrics">
-      <div>
-        <div class="metric-big sage">$1M+</div>
-        <div class="metric-caption">additional revenue recovered</div>
-      </div>
-      <div>
-        <div class="metric-big sage">20%</div>
-        <div class="metric-caption">omission rate eliminated</div>
-      </div>
+      <div><div class="metric-big terra">$1M+</div><div class="metric-caption">additional revenue recovered</div></div>
+      <div><div class="metric-big">20%</div><div class="metric-caption">omission rate eliminated</div></div>
     </div>
   </div>
-
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
   <div class="section-header">
-    <span class="section-num" style="color:var(--amber-light)">02</span>
+    <span class="section-num">02</span>
     <h2 class="section-title">Technical Stack</h2>
-    <span class="section-tag" style="color:rgba(245,240,232,0.35)">5 Categories</span>
+    <span class="section-tag">5 Categories</span>
   </div>
   <div class="skills-columns">
     <div class="reveal">
@@ -747,11 +699,11 @@ footer {
       <div class="skill-entry">BigQuery</div>
       <div class="skill-entry">Dataproc</div>
       <div class="skill-entry">Airflow / Cloud Composer</div>
-      <div class="skill-entry">dbt Core & Cloud</div>
+      <div class="skill-entry">dbt Core &amp; Cloud</div>
       <div class="skill-entry">ETL / ELT Pipelines</div>
     </div>
     <div class="reveal">
-      <div class="skill-col-title">Cloud & Infra</div>
+      <div class="skill-col-title">Cloud &amp; Infrastructure</div>
       <div class="skill-entry">Google Cloud Platform</div>
       <div class="skill-entry">Compute Engine</div>
       <div class="skill-entry">Docker</div>
@@ -759,15 +711,15 @@ footer {
       <div class="skill-entry">PySpark</div>
     </div>
     <div class="reveal">
-      <div class="skill-col-title">AI & Machine Learning</div>
+      <div class="skill-col-title">AI &amp; Machine Learning</div>
       <div class="skill-entry">Google Gemini (LLM)</div>
       <div class="skill-entry">Prompt Engineering</div>
-      <div class="skill-entry">ChromaDB (Vector DB)</div>
+      <div class="skill-entry">Vector Databases</div>
       <div class="skill-entry">Scikit-learn</div>
       <div class="skill-entry">Cursor / Copilot</div>
     </div>
     <div class="reveal">
-      <div class="skill-col-title">Analytics & Tooling</div>
+      <div class="skill-col-title">Analytics &amp; Tooling</div>
       <div class="skill-entry">Tableau</div>
       <div class="skill-entry">Mode</div>
       <div class="skill-entry">Looker</div>
@@ -779,49 +731,56 @@ footer {
 </section>
 
 <!-- EXPERIENCE -->
-<section id="experience">
+<section id="experience" class="alt">
   <div class="section-header">
     <span class="section-num">03</span>
     <h2 class="section-title">Experience</h2>
-    <span class="section-tag">CVS Health</span>
+    <span class="section-tag">CVS Health · 2 Roles</span>
   </div>
-  <div>
-    <div class="exp-entry reveal">
+  <div class="reveal">
+    <div class="exp-company-header">
+      <div class="exp-company-logo">CVS</div>
+      <div>
+        <div class="exp-company-name-big">CVS Health</div>
+        <div class="exp-company-sub">Healthcare · Dallas, TX</div>
+      </div>
+      <div class="exp-company-tenure">Jan 2023 – Present</div>
+    </div>
+
+    <div class="exp-entry">
       <div>
         <div class="exp-tenure">Mar 2026 – Present</div>
-        <div class="exp-role-title">Senior Data<br>Engineer</div>
-        <div class="exp-company-name">CVS Health</div>
+        <div class="exp-role-title">Senior Data Engineer</div>
         <div class="exp-badge-row">
-          <span class="exp-badge">Current</span>
-          <span class="exp-badge outline">Dallas, TX</span>
+          <span class="exp-badge">Current Role</span>
+          <span class="exp-badge outline">Promoted</span>
         </div>
       </div>
       <div>
         <p class="exp-summary">Promoted to Senior Data Engineer — immediately leading high-stakes pipeline delivery, AI tooling, and cross-team architecture modernization at enterprise scale.</p>
         <ul class="exp-bullets">
-          <li>Sole engineer on <strong>Gemini-powered AI assistant</strong> used by 50+ stakeholders and exec leadership across 4 teams — eliminating ~20% engineer workday per inquiry</li>
-          <li>Delivered <strong>2026 Welcome Season Pipeline</strong>, compressing 4-week scope into 2 weeks; automated Day-1 drug pricing data availability</li>
-          <li>Presented at <strong>PSS Analytical Engineering workshop</strong> to AVP-level data leadership; recognized by director for data mastery and clear narrative</li>
-          <li>Designed <strong>structural integrity checks</strong> surfacing ~1,500 contract variances and ~500 faulty client setups; foundation for upcoming AI-assisted recommendation tool</li>
+          <li>Co-built a <strong>Gemini-powered AI assistant</strong> with a principal engineer — coordinated knowledge base contributions from 5 engineers, compiled the unified assistant, and educated the team on building AI agents; used daily by 50+ stakeholders including exec leadership, eliminating ~20% of an engineer's workday per inquiry</li>
+          <li>Delivered the <strong>annual enrollment client setup pipeline</strong> — configures both new and renewing employer clients ahead of the plan year so employees are charged correct drug prices from day one; compressed a 4-week scope into 2 weeks</li>
+          <li>Presented at <strong>AVP-level Data Engineering workshop</strong>; recognized by director for data mastery, clear narrative, and precise on-the-spot responses</li>
+          <li>Designed <strong>structural integrity checks</strong> surfacing ~1,500 contract variances and ~500 faulty client setups; foundation for an upcoming AI-assisted recommendation tool</li>
         </ul>
       </div>
     </div>
-    <div class="exp-entry reveal">
+
+    <div class="exp-entry">
       <div>
         <div class="exp-tenure">Jan 2023 – Feb 2026</div>
-        <div class="exp-role-title">Data<br>Engineer</div>
-        <div class="exp-company-name">CVS Health</div>
+        <div class="exp-role-title">Data Engineer</div>
         <div class="exp-badge-row">
           <span class="exp-badge outline">3 Years</span>
-          <span class="exp-badge outline">Dallas, TX</span>
         </div>
       </div>
       <div>
-        <p class="exp-summary">Built and owned production data systems supporting drug pricing accuracy, financial surveillance, and client onboarding — while driving framework modernization and team capability growth.</p>
+        <p class="exp-summary">Built and owned production data systems supporting drug pricing accuracy, financial surveillance, and client onboarding at enterprise scale — while driving framework modernization and team capability growth.</p>
         <ul class="exp-bullets">
           <li>End-to-end <strong>GCP ingestion pipeline</strong> for 2,000+ clients — 75% time savings, $160M projected profit impact</li>
-          <li>Introduced <strong>dbt framework</strong> into Client Setup codebase, standardizing transformation logic and improving data lineage across pricing datasets</li>
-          <li>Engineered <strong>containerized ETL workflows</strong> (BigQuery, Docker, Airflow) — 60% reduction in manual intervention, foundational data governance</li>
+          <li>Introduced <strong>dbt framework</strong> into the client setup codebase, standardizing transformation logic and improving data lineage across pricing datasets</li>
+          <li>Engineered <strong>containerized ETL workflows</strong> (BigQuery, Docker, Airflow) — 60% reduction in manual intervention; established the team's coding standards and automated unit tests bringing defect rates to ~2%</li>
           <li>Designed <strong>financial surveillance system</strong> with real-time monitoring, automated corrections, and Salesforce workflow — 80% manual effort reduction</li>
           <li>Automated <strong>financial year client setup</strong>, eliminating 20% omission rate and recovering ~$1M revenue</li>
           <li>Delivered <strong>Looker rebate exposure dashboard</strong> for leadership in under 5 days — learned the tool from scratch</li>
@@ -838,36 +797,48 @@ footer {
   <div class="section-header">
     <span class="section-num">04</span>
     <h2 class="section-title">Recognition</h2>
-    <span class="section-tag">Highlights</span>
+    <span class="section-tag">6 Highlights</span>
   </div>
   <div class="recognition-grid">
     <div class="recog-card reveal">
-      <div class="recog-icon">🎤</div>
+      <div class="recog-icon-wrap">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
       <div class="recog-title">AVP-Level Presentation, Irving Workshop</div>
-      <div class="recog-desc">Presented the Welcome Season Pipeline to senior data leadership including AVP Data Engineering. Recognized by director for clear narrative, data mastery, confident delivery, and precise on-the-spot responses.</div>
+      <div class="recog-desc">Presented the annual enrollment pipeline to senior data leadership including AVP Data Engineering. Recognized by director for clear narrative, data mastery, confident delivery, and precise on-the-spot responses.</div>
     </div>
     <div class="recog-card reveal">
-      <div class="recog-icon">🏙️</div>
+      <div class="recog-icon-wrap">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      </div>
       <div class="recog-title">Chicago Data Science Workshop</div>
       <div class="recog-desc">Recognized for strong presentation skills with Data Science and business partners from Network Pricing and Network Management.</div>
     </div>
     <div class="recog-card reveal">
-      <div class="recog-icon">⚡</div>
+      <div class="recog-icon-wrap">
+        <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      </div>
       <div class="recog-title">Looker Dashboard in &lt;5 Days</div>
       <div class="recog-desc">When urgent leadership need arose, proactively learned Looker from scratch and delivered a production rebate exposure dashboard in under 5 days. Recognized by leadership for initiative.</div>
     </div>
     <div class="recog-card reveal">
-      <div class="recog-icon">📚</div>
+      <div class="recog-icon-wrap">
+        <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      </div>
       <div class="recog-title">Engineering Best Practices Session</div>
       <div class="recog-desc">Led a knowledge session on DE best practices; received strong leadership support and is now being considered for adoption by the platform team.</div>
     </div>
     <div class="recog-card reveal">
-      <div class="recog-icon">🔄</div>
+      <div class="recog-icon-wrap">
+        <svg viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+      </div>
       <div class="recog-title">Zero-Disruption Migration</div>
       <div class="recog-desc">Led end-to-end migration of Client Setup from MAC-LP to ENT with zero business disruption and zero stakeholder issues — recognized for transparent communication throughout.</div>
     </div>
     <div class="recog-card reveal">
-      <div class="recog-icon">🤝</div>
+      <div class="recog-icon-wrap">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
       <div class="recog-title">De Facto Project Manager</div>
       <div class="recog-desc">Acted as project manager for Client Setup — standups, story creation, backlog tracking, dependency resolution, and cross-functional stakeholder communication.</div>
     </div>
@@ -886,34 +857,10 @@ footer {
 </footer>
 
 <script>
-  const cursor = document.getElementById('cursor');
-  const ring = document.getElementById('cursorRing');
-  let mx = 0, my = 0, rx = 0, ry = 0;
-
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    cursor.style.left = (mx - 4) + 'px';
-    cursor.style.top = (my - 4) + 'px';
-  });
-
-  (function animRing() {
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
-    ring.style.left = (rx - 16) + 'px';
-    ring.style.top = (ry - 16) + 'px';
-    requestAnimationFrame(animRing);
-  })();
-
-  document.querySelectorAll('a, .project-row, .recog-card, .hero-stat, .skill-entry').forEach(el => {
-    el.addEventListener('mouseenter', () => { cursor.style.transform = 'scale(2.5)'; ring.style.transform = 'scale(1.4)'; });
-    el.addEventListener('mouseleave', () => { cursor.style.transform = 'scale(1)'; ring.style.transform = 'scale(1)'; });
-  });
-
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.08 });
-
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
 </body>
 </html>
